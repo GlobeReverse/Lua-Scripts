@@ -59,7 +59,7 @@ local settings = getTab("Settings") do
             end })
             menuSettings:AddBind({ Title = "Unload", Flag = "UnloadMenu", Default = Enum.KeyCode.Unknown, Callback = function() self:unload(callback) end});
 
-            interfaceAddSignal(RunService.RenderStepped, function()
+            interfaceAddSignal(game:GetService("RunService").RenderStepped, function()
                 if (tick() - runCooldown) < 1 then return end;
                 runCooldown = tick();
 
